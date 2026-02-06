@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="tool-section">
+    <h1 class="page-title">Sell Crops (Prototype)</h1>
+    <p class="page-subtitle">List your produce with quantity and price. No bidding or payment.</p>
+
+    <div class="two-column">
+        <form id="sell-form" class="ka-form">
+            <div class="form-group">
+                <label for="sell-crop-name">Crop name</label>
+                <input type="text" id="sell-crop-name" required placeholder="e.g. Wheat">
+            </div>
+            <div class="form-group">
+                <label for="sell-quantity">Quantity (quintals)</label>
+                <input type="number" id="sell-quantity" required min="0.1" step="0.1">
+            </div>
+            <div class="form-group">
+                <label for="sell-price">Price (₹/quintal)</label>
+                <input type="number" id="sell-price" required min="0" step="100">
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Add Listing</button>
+            <p class="form-note">Listings are for demo only and stored temporarily on the server.</p>
+        </form>
+
+        <div class="results-panel">
+            <h2>Current Listings</h2>
+            <div id="sell-listings" class="listing-list">
+                <!-- Filled from /api/list_crop -->
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/sell.js') }}"></script>
+{% endblock %}
+

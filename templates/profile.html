@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="tool-section">
+    <h1 class="page-title">Profile</h1>
+    <p class="page-subtitle">View your basic details and history of crop recommendations and listings.</p>
+
+    <div id="profile-container" class="profile-layout">
+        <div class="profile-summary">
+            <h2>Farmer Details</h2>
+            <p><strong>Name:</strong> <span id="profile-name"></span></p>
+            <p><strong>Village:</strong> <span id="profile-village"></span></p>
+            <p><strong>District:</strong> <span id="profile-district"></span></p>
+            <p><strong>State:</strong> <span id="profile-state"></span></p>
+        </div>
+
+        <div class="profile-history">
+            <h2>Recommendation History</h2>
+            <div id="profile-recommendations" class="history-list"></div>
+
+            <h2>Sale Listings</h2>
+            <div id="profile-listings" class="history-list"></div>
+        </div>
+    </div>
+    <p id="profile-message" class="info-message"></p>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+{% endblock %}
+

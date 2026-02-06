@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="dashboard">
+    <h1 class="page-title">Farmer Dashboard</h1>
+    <p class="page-subtitle">Choose a tool to plan your next season.</p>
+
+    <div class="card-grid">
+        <a href="{{ url_for('recommend_page') }}" class="feature-card">
+            <div class="feature-icon">🌾</div>
+            <h2>Crop Recommendation</h2>
+            <p>Find the most profitable crop for your soil, season and climate.</p>
+        </a>
+        <a href="{{ url_for('roi_page') }}" class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h2>ROI Calculator</h2>
+            <p>Enter cost and area to see expected profit for a crop.</p>
+        </a>
+        <a href="{{ url_for('fertilizers_page') }}" class="feature-card">
+            <div class="feature-icon">🧪</div>
+            <h2>Fertilizer Comparison</h2>
+            <p>Compare organic and chemical fertilizers by toxicity and price.</p>
+        </a>
+        <a href="{{ url_for('sell_page') }}" class="feature-card">
+            <div class="feature-icon">🛒</div>
+            <h2>Sell Crops (Prototype)</h2>
+            <p>List your produce with quantity and price. No bidding or payment.</p>
+        </a>
+        <a href="{{ url_for('profile_page') }}" class="feature-card">
+            <div class="feature-icon">👤</div>
+            <h2>Profile</h2>
+            <p>View your basic details, recommendations and sale listings.</p>
+        </a>
+    </div>
+</section>
+{% endblock %}
+
