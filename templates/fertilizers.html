@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 <section class="tool-section">
-    <h1 class="page-title">Fertilizer Comparison</h1>
-    <p class="page-subtitle">Compare fertilizers by type, toxicity level and price per kg.</p>
+    <h1 class="page-title" data-i18n="fertilizer_title">Fertilizer Comparison</h1>
+    <p class="page-subtitle" data-i18n="fertilizer_subtitle">Compare fertilizers by type, toxicity level and price per kg.</p>
 
     <div class="fertilizer-table-wrapper">
         <table class="ka-table">
             <thead>
             <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Toxicity</th>
-                <th>Price (₹/kg)</th>
+                <th data-i18n="fertilizer_name">Name</th>
+                <th data-i18n="fertilizer_type">Type</th>
+                <th data-i18n="fertilizer_toxicity">Toxicity</th>
+                <th data-i18n="fertilizer_price">Price (₹/kg)</th>
             </tr>
             </thead>
             <tbody id="fertilizer-body">
@@ -26,4 +26,3 @@
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/fertilizers.js') }}"></script>
 {% endblock %}
-

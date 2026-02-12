@@ -3,33 +3,39 @@
 <section class="auth-section">
     <div class="auth-card">
         <div style="display:flex; justify-content:space-between; align-items:center;">
-            <h1 id="title-text">Welcome to Krishi AI</h1>
-        
-            <select id="lang-select">
-                <option value="en">English</option>
-                <option value="kn">ಕನ್ನಡ</option>
-            </select>
+            <h1 data-i18n="login_title">Welcome to Krishi AI</h1>
         </div>
         
-        <p id="subtitle-text" class="auth-subtitle">
+        <p class="auth-subtitle" data-i18n="login_subtitle">
             Sign in to see your dashboard and crop insights.
         </p>
+
         <div class="auth-toggle">
-            <button class="auth-toggle-btn active" data-mode="login">Login</button>
-            <button class="auth-toggle-btn" data-mode="register">Register</button>
+            <button class="auth-toggle-btn active" data-mode="login" data-i18n="login">
+                Login
+            </button>
+            <button class="auth-toggle-btn" data-mode="register" data-i18n="register">
+                Register
+            </button>
         </div>
 
         <form id="auth-form" class="auth-form" method="post">
             <input type="hidden" id="mode" name="mode" value="login">
+
             <div class="form-group">
                 <label for="username">Farmer ID / Name</label>
                 <input type="text" id="username" name="username" required placeholder="e.g. ram_singh">
             </div>
+
             <div class="form-group">
                 <label for="password">Password (demo only)</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <button type="submit" class="btn btn-primary btn-full">Continue</button>
+
+            <button type="submit" class="btn btn-primary btn-full">
+                Continue
+            </button>
+
             {% if error %}
             <p class="auth-note" style="color: #b3261e;">{{ error }}</p>
             {% else %}
@@ -43,4 +49,3 @@
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/login.js') }}"></script>
 {% endblock %}
-

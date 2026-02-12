@@ -1,36 +1,47 @@
 {% extends "base.html" %}
 {% block content %}
 <section class="tool-section">
-    <h1 class="page-title">ROI Calculator</h1>
-    <p class="page-subtitle">Estimate profit for a crop based on area and cost.</p>
+    <h1 class="page-title" data-i18n="roi_title">ROI Calculator</h1>
+    <p class="page-subtitle" data-i18n="roi_subtitle">
+        Estimate profit for a crop based on area and cost.
+    </p>
 
     <div class="two-column">
         <form id="roi-form" class="ka-form">
             <div class="form-group">
-                <label for="roi-crop">Crop name</label>
+                <label for="roi-crop" data-i18n="roi_crop_name">Crop name</label>
                 <input type="text" id="roi-crop" required placeholder="e.g. Wheat">
             </div>
+
             <div class="form-group">
-                <label for="roi-area">Area (acres)</label>
+                <label for="roi-area" data-i18n="roi_area">Area (acres)</label>
                 <input type="number" id="roi-area" required min="0.1" step="0.1" value="1">
             </div>
+
             <div class="form-group">
-                <label for="roi-cost">Total cost (₹)</label>
-                <input type="number" id="roi-cost" required min="0" step="1000" placeholder="Enter your expected total cost">
+                <label for="roi-cost" data-i18n="roi_cost">Total cost (₹)</label>
+                <input type="number" id="roi-cost" required min="0" step="1000"
+                       placeholder="Enter your expected total cost">
             </div>
-            <button type="submit" class="btn btn-primary btn-full">Calculate Profit</button>
-            <p class="form-note">If cost is left as 0, system will use typical cost from its dataset.</p>
+
+            <button type="submit" class="btn btn-primary btn-full" data-i18n="calculate_profit">
+                Calculate Profit
+            </button>
+
+            <p class="form-note" data-i18n="roi_note">
+                If cost is left as 0, system will use typical cost from its dataset.
+            </p>
         </form>
 
         <div class="results-panel">
             <div id="roi-result-card" class="result-card hidden">
-                <h2>Profit Summary</h2>
-                <p><strong>Crop:</strong> <span id="roi-crop-name"></span></p>
-                <p><strong>Area:</strong> <span id="roi-area-used"></span> acres</p>
-                <p><strong>Yield used:</strong> <span id="roi-yield"></span> tons/acre</p>
-                <p><strong>Price used:</strong> ₹<span id="roi-price"></span> per ton</p>
-                <p><strong>Total cost used:</strong> ₹<span id="roi-cost-used"></span></p>
-                <p class="highlight-profit"><strong>Expected profit:</strong> ₹<span id="roi-profit"></span></p>
+                <h2 data-i18n="profit_summary">Profit Summary</h2>
+                <p><strong data-i18n="crop_label">Crop:</strong> <span id="roi-crop-name"></span></p>
+                <p><strong data-i18n="area_label">Area:</strong> <span id="roi-area-used"></span> acres</p>
+                <p><strong data-i18n="yield_used">Yield used:</strong> <span id="roi-yield"></span> tons/acre</p>
+                <p><strong data-i18n="price_used">Price used:</strong> ₹<span id="roi-price"></span> per ton</p>
+                <p><strong data-i18n="total_cost_used">Total cost used:</strong> ₹<span id="roi-cost-used"></span></p>
+                <p class="highlight-profit"><strong data-i18n="expected_profit">Expected profit:</strong> ₹<span id="roi-profit"></span></p>
             </div>
             <p id="roi-message" class="info-message"></p>
         </div>
@@ -41,4 +52,3 @@
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/roi.js') }}"></script>
 {% endblock %}
-

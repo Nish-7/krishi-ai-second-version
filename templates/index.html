@@ -2,31 +2,36 @@
 {% block content %}
 <section class="hero">
     <div class="hero-text">
-        <h1>From soil to sale.<br>Your farm. Your future.</h1>
-        <p>Smart crop and profit guidance, tailored to your soil, season and market.</p>
+        <h1 data-i18n="hero_title">
+            From soil to sale.<br>Your farm. Your future.
+        </h1>
+        <p data-i18n="hero_subtitle">
+            Smart crop and profit guidance, tailored to your soil, season and market.
+        </p>
         <div class="hero-actions">
-            <a href="{{ url_for('login_page') }}" class="btn btn-primary btn-large">Get Started</a>
-            <div class="language-selector">
-                <label for="language-select">Language</label>
-                <select id="language-select">
-                    <option value="en">English</option>
-                    <option value="hi">हिन्दी (Hindi)</option>
-                </select>
-            </div>
+            <a href="{{ url_for('login_page') }}"
+               class="btn btn-primary btn-large"
+               data-i18n="get_started">
+                Get Started
+            </a>
         </div>
     </div>
+
     <div class="hero-illustration">
         <div class="hero-card">
             <span class="hero-icon">📈</span>
-            <h2>ROI-based crop advice</h2>
-            <p>See yield, price, cost and profit for each recommended crop.</p>
+            <h2 data-i18n="hero_card1_title">ROI-based crop advice</h2>
+            <p data-i18n="hero_card1_desc">
+                See yield, price, cost and profit for each recommended crop.
+            </p>
         </div>
         <div class="hero-card secondary">
             <span class="hero-icon">🧪</span>
-            <h3>Soil &amp; climate aware</h3>
-            <p>Simple inputs, farmer-friendly outputs.</p>
+            <h3 data-i18n="hero_card2_title">Soil &amp; climate aware</h3>
+            <p data-i18n="hero_card2_desc">
+                Simple inputs, farmer-friendly outputs.
+            </p>
         </div>
     </div>
 </section>
 {% endblock %}
-
